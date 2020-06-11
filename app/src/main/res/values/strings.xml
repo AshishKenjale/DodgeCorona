@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">CoronaWars</string>
+    <string name="start_new_game">START NEW GAME</string>
+    <string name="about">ABOUT</string>
+    <string name="about_corona_wars">About Corona Wars</string>
+    <string name="about_game_text">The world is infested with the deadly Corona virus. You can get infected even if a person around you is infected. The CDC has recommended keeping a minimum social distance of 6 feet in public places. And use of face covering is mandatory anywhere in public within 6 feet of another person. In this game, you will be helping Hagger tackle infected people to make his way home safely.</string>
+    <string name="get_ready">Get Ready</string>
+    <string name="tap_screen_to_start">Tap Screen to Start</string>
+    <string name="game_paused">Game Paused</string>
+    <string name="tap_screen_to_resume">Tap Screen to Resume</string>
+    <string name="victory">VICTORY</string>
+    <string name="survived_the_pandemic">Reached home safely.</string>
+    <string name="game_over">Game Over</string>
+    <string name="you_got_infected">You got infected!</string>
+    <string name="too_close_to_infected_person">Went within 6 ft of an infected person.</string>
+    <string name="stay_home">Stay home for 14 days.</string>
+    <string name="tap_screen_to_restart">Tap Screen to Restart</string>
+</resources>
