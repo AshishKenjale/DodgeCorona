@@ -1,22 +1,10 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2511
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
-{\colortbl;\red255\green255\blue255;\red25\green28\blue31;\red98\green9\blue1;\red251\green0\blue7;
-\red210\green9\blue5;}
-{\*\expandedcolortbl;;\cssrgb\c12941\c14510\c16078;\cssrgb\c46667\c6667\c0;\cssrgb\c100000\c0\c0\c4706;
-\cssrgb\c86667\c13333\c0;}
-\margl1440\margr1440\vieww27420\viewh16280\viewkind0
-\deftab720
-\pard\pardeftab720\sl320\partightenfactor0
-
-\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
-pipeline \{\
-    agent \{ docker \{ image \cf3 \cb4 '\cf5 python:3.5.1\cf3 '\cf2 \cb1  \} \}\
-    stages \{\
-        stage(\cf3 \cb4 '\cf5 build\cf3 '\cf2 \cb1 ) \{\
-            steps \{\
-                sh \cf3 \cb4 '\cf5 python --version\cf3 '\cf2 \cb1 \
-            \}\
-        \}\
-    \}\
-\}\
+pipeline {
+    agent { docker { image 'python:3.5.1' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'python --version'
+            }
+        }
+    }
 }
