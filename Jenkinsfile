@@ -3,7 +3,10 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'hello from Pipeline'
+                echo 'Building..'
+                def username = 'Jenkins'
+                echo 'Hello Mr. ${username}'
+                echo "I said, Hello Mr. ${username}"
             }
         }
     }
