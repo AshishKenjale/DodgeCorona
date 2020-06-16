@@ -1,11 +1,10 @@
 /*
  * simulates character in the game
  */
-package com.project.coronawars
+package com.project.dodgecorona
 
 import android.content.Context
 import android.graphics.*
-import android.util.Log
 import androidx.core.content.ContextCompat
 import kotlin.math.sqrt
 

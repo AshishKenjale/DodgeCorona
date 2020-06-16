@@ -1,8 +1,7 @@
-package com.project.coronawars
+package com.project.dodgecorona
 
 import android.content.Context
 import android.graphics.*
-import android.util.Log
 import kotlin.random.Random
 
 class PersonalProtectiveEquipment(
@@ -19,22 +18,10 @@ class PersonalProtectiveEquipment(
     var safeSocialDistance = 0f
     var spawner: PPESpawner? = null
 
-    private val greenLinePaint = Paint().apply {
-        color = Color.GREEN
-        strokeWidth = 5f
-        style = Paint.Style.STROKE
-    }
-
-    private val redLinePaint = Paint().apply {
-        color = Color.RED
-        strokeWidth = 5f
-        style = Paint.Style.STROKE
-    }
-
     init {
-        //TODO: set bitmap based on level. maybe set virus for level so and so on
+        //TODO: set bitmap based on level. maybe set obstacle for level so and so on
         if (bitmap == null) bitmap =
-            BitmapFactory.decodeResource(context.resources, R.drawable.mask3)
+            BitmapFactory.decodeResource(context.resources, R.drawable.mask)
         bitmap?.let {
             bitmap = Bitmap.createScaledBitmap(it, 2 * it.height / 3, 2 * it.height / 3, true)
         }
@@ -61,7 +48,7 @@ class PersonalProtectiveEquipment(
         checkHorizontalScreenBounds()
     }
 
-    //check circles touching bounds of screen
+    //check sprite touching bounds of screen
     fun checkHorizontalScreenBounds() {
         val screenWidth = GameSurface.screenWidth
 

@@ -2,7 +2,7 @@
  * objects of the game is extended from this abstract class
  * Bitmap 3 columns, 4 rows
  */
-package com.project.coronawars
+package com.project.dodgecorona
 
 import android.graphics.Bitmap
 

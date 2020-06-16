@@ -1,11 +1,10 @@
-package com.project.coronawars
+package com.project.dodgecorona
 
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Point
-import android.util.Log
 import com.assignment.userinformationapp.PrefsHelper
 
 class VirusSpawner(gameScene: GameScene, context: Context) {
@@ -23,9 +22,6 @@ class VirusSpawner(gameScene: GameScene, context: Context) {
     private var hiScoreText = ""
     private val hiScoreTextPaint: Paint
     private val hiScoreLocationOffset: Point
-
-    private var startTime: Long = 0
-    private var initTime: Long = 0
 
     private val DELTA_TIME = 40
     private val VICTORY_SCORE = 500
@@ -45,8 +41,6 @@ class VirusSpawner(gameScene: GameScene, context: Context) {
         hiScoreTextPaint.textSize = 60f
         hiScoreLocationOffset = Point(-50, 30)
 
-        startTime = System.currentTimeMillis()
-        initTime = System.currentTimeMillis()
         populateVirusObstacles()
 
         hiScoreText = "HI " + PrefsHelper.read(PrefsHelper.HIGH_SCORE, 0)
@@ -116,9 +110,5 @@ class VirusSpawner(gameScene: GameScene, context: Context) {
             hiScoreLocationOffset.y + (hiScoreTextPaint.descent() - hiScoreTextPaint.ascent()),
             hiScoreTextPaint
         )
-    }
-
-    fun resetStartTime() {
-        this.startTime = System.currentTimeMillis()
     }
 }

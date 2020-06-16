@@ -1,2 +1,2 @@
-rootProject.name='CoronaWars'
+rootProject.name='DodgeCorona'
 include ':app'

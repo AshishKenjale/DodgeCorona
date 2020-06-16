@@ -1,4 +1,4 @@
-package com.project.coronawars
+package com.project.dodgecorona
 
 import org.junit.Test
 

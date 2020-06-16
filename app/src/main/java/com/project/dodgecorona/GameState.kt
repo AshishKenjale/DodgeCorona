@@ -1,4 +1,4 @@
-package com.project.coronawars
+package com.project.dodgecorona
 
 enum class GameState {
     READY, RUNNING, PAUSED, LOST, WON

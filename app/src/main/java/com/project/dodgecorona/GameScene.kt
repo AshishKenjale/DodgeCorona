@@ -1,10 +1,9 @@
-package com.project.coronawars
+package com.project.dodgecorona
 
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
-import android.util.Log
 import android.view.SurfaceHolder
 
 class GameScene {
@@ -77,8 +76,6 @@ class GameScene {
 
         if (gameState === GameState.PAUSED) {
             mLastTime = System.currentTimeMillis() + 100
-
-            virusSpawner?.resetStartTime()
             gameState = previousGameState
         } else if (gameState !== GameState.PAUSED) {
             previousGameState = gameState

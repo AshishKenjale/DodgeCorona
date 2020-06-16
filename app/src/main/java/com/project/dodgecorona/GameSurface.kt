@@ -1,9 +1,8 @@
-package com.project.coronawars
+package com.project.dodgecorona
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.util.Log
 import android.view.MotionEvent
 import android.view.SurfaceHolder
 import android.view.SurfaceView
@@ -67,9 +66,9 @@ class GameSurface(context: Context?, screenWidth: Int, screenHeight: Int) :
     }
 
     private fun setPlayer() {
-        val chibiBitmap1 = BitmapFactory.decodeResource(this.resources, R.drawable.warrior_m)
+        val chibiBitmap1 = BitmapFactory.decodeResource(this.resources, R.drawable.hagger)
 
-        var maskBitmap = BitmapFactory.decodeResource(resources, R.drawable.mask3)
+        var maskBitmap = BitmapFactory.decodeResource(resources, R.drawable.mask)
         maskBitmap?.let {
             maskBitmap = Bitmap.createScaledBitmap(it, 1 * it.height / 4, 1 * it.height / 4, true)
         }

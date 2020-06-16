@@ -1,4 +1,4 @@
-package com.project.coronawars
+package com.project.dodgecorona
 
 val Any.TAG: String
     get() {

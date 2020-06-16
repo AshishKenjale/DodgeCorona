@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Corona Wars</string>
-    <string name="start_new_game">START NEW GAME</string>
+    <string name="app_name">Dodge Karo Na</string>
+    <string name="start_new_game">START</string>
     <string name="about">ABOUT</string>
     <string name="controls">CONTROLS</string>
     <string name="controls_title">Game Controls</string>

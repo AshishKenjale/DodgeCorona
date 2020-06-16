@@ -1,4 +1,4 @@
-package com.project.coronawars
+package com.project.dodgecorona
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,7 +9,6 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.Bundle
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
@@ -21,7 +20,6 @@ import kotlin.math.absoluteValue
 class GamePlayActivity : AppCompatActivity(), SensorEventListener, View.OnTouchListener {
 
     private var mSensorManager: SensorManager? = null
-    //    private var mAccelerometer: Sensor? = null
     private var mGravitySensor: Sensor? = null
     lateinit var mGameSurface: GameSurface
     val screenSize = Point()

@@ -1,8 +1,7 @@
-package com.project.coronawars
+package com.project.dodgecorona
 
 import android.content.Context
 import android.graphics.*
-import android.util.Log
 import kotlin.random.Random
 
 class VirusObstacle(
@@ -33,9 +32,9 @@ class VirusObstacle(
     }
 
     init {
-        //TODO: set bitmap based on level. maybe set virus for level so and so on
+        //TODO in V2: set bitmap based on level. maybe set obstacle for level so and so on
         if (bitmap == null) bitmap =
-            BitmapFactory.decodeResource(context.resources, R.drawable.virus)
+            BitmapFactory.decodeResource(context.resources, R.drawable.obstacle)
         bitmap?.let {
             bitmap = Bitmap.createScaledBitmap(it, it.height / 2, it.height / 2, true)
         }
