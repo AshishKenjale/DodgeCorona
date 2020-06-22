@@ -15,7 +15,8 @@
     <string name="survived_the_pandemic">Reached home safely.</string>
     <string name="game_over">Game Over</string>
     <string name="you_got_infected">You got infected!</string>
-    <string name="too_close_to_infected_person">Went within 6 ft of an infected person.</string>
+    <string name="too_close_to_infected_person_imperial">Went within 6 ft of an infected person.</string>
+    <string name="too_close_to_infected_person_metric">Went within 2 m of an infected person.</string>
     <string name="stay_home">Stay home for 14 days.</string>
     <string name="tap_screen_to_restart">Tap Screen to Restart</string>
     <string name="copyright_string">© 2020 Ashish Kenjale</string>
