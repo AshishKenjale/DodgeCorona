@@ -8,7 +8,7 @@ Download
 
 Screenshots
 ------------
-<img src="/Screenshots/1.png" alt="drawing" width="200"/><img src="/Screenshots/2.png" alt="drawing" width="200"/><img src="/Screenshots/3.png" alt="drawing" width="200"/>
+![](/Screenshots/4.gif)<br/><img src="/Screenshots/1.png" alt="drawing" width="200"/><img src="/Screenshots/2.png" alt="drawing" width="200"/><img src="/Screenshots/3.png" alt="drawing" width="200"/>
 
 Contributing
 ------------
