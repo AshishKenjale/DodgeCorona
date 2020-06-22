@@ -5,6 +5,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.view.SurfaceHolder
+import java.util.*
 
 class GameScene {
     // Properties
@@ -248,7 +249,7 @@ class GameScene {
             yPos = (canvasHeight / 2 + 150 - (paint.descent() + paint.ascent()) / 2)
             screenCanvas.drawText(victoryMessage, xPos, yPos, paint)
 
-            victoryMessage = context.getString(R.string.too_close_to_infected_person)
+            victoryMessage = getLocaleBasedMessage()
             xPos = canvasWidth / 2 - (paint.measureText(victoryMessage) / 2)
             yPos = (canvasHeight / 2 + 220 - (paint.descent() + paint.ascent()) / 2)
             screenCanvas.drawText(victoryMessage, xPos, yPos, paint)
@@ -267,6 +268,17 @@ class GameScene {
         }
 
         paint.reset()
+    }
+
+    private fun getLocaleBasedMessage(): String {
+        val message: String
+        Log.i(TAG, "isMetric: ${Locale.getDefault().isMetric()}")
+        if (Locale.getDefault().isMetric()) {
+            message = context.getString(R.string.too_close_to_infected_person_metric)
+        } else {
+            message = context.getString(R.string.too_close_to_infected_person_imperial)
+        }
+        return message
     }
 
     private fun control(start: Long) {
