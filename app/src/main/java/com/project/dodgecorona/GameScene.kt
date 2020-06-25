@@ -274,9 +274,9 @@ class GameScene {
         val message: String
         Log.i(TAG, "isMetric: ${Locale.getDefault().isMetric()}")
         if (Locale.getDefault().isMetric()) {
-            message = context.getString(R.string.too_close_to_infected_person_metric)
+            message = String.format(context.getString(R.string.too_close_to_infected_person), context.getString(R.string.safe_social_distance_in_meter))
         } else {
-            message = context.getString(R.string.too_close_to_infected_person_imperial)
+            message = String.format(context.getString(R.string.too_close_to_infected_person), context.getString(R.string.safe_social_distance_in_feet))
         }
         return message
     }
