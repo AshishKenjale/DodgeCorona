@@ -191,10 +191,10 @@ class GameScene {
             canvasHeight.toFloat(),
             canvasBorderPaint
         )
-
-        ppeSpawner?.drawAll(screenCanvas)
-        virusSpawner?.draw(screenCanvas)
+        
         player?.draw(screenCanvas)
+        virusSpawner?.draw(screenCanvas)
+        ppeSpawner?.drawAll(screenCanvas)
 
         Log.i(TAG, "gameState: ${gameState.toString()}")
         if (gameState === GameState.READY) {
