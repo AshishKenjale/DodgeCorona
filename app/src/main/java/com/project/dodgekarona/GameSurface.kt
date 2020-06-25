@@ -121,8 +121,7 @@ class GameSurface(context: Context?, screenWidth: Int, screenHeight: Int) :
                 MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                     Log.i(TAG, "MotionEvent.ACTION_UP or ACTION_CANCEL")
 
-                    //TODO: test this case
-                    if (gameScene?.gameState === GameState.LOST) {
+                     if (gameScene?.gameState === GameState.LOST) {
                         resume()
                     } else if (gameScene?.gameState == GameState.WON) {
                         resume()

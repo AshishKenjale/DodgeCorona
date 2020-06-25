@@ -13,7 +13,7 @@ class PPESpawner(gameScene: GameScene, context: Context) {
     private val context: Context
     protected var maxPPECount: Int
     protected var existingPPE: Int
-    var ppeList = mutableListOf<PersonalProtectiveEquipment>()
+    var ppeList = mutableListOf<PPE>()
     var lastPPERemovalTime: Long
 
     fun spawnVirus() {
@@ -34,14 +34,14 @@ class PPESpawner(gameScene: GameScene, context: Context) {
         while (canSpawnPPE && ppeList.size < maxPPECount) {
 
             val startCoordinates = Point(GameSurface.screenWidth / 2, -95)
-            val virus = PersonalProtectiveEquipment(gameScene, startCoordinates, 50, context)
+            val virus = PPE(gameScene, startCoordinates, 50, context)
             ppeList.add(0, virus)
 
             virus.registerSpawner(this)
         }
     }
 
-    fun reportDeath(virus: PersonalProtectiveEquipment) {
+    fun reportDeath(virus: PPE) {
         ppeList.remove(virus)
         updatePPERemovalTime()
     }

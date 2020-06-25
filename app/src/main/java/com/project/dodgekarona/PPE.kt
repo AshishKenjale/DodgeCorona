@@ -7,7 +7,7 @@ import kotlin.random.Random
 /**
  * Created by Ashish Kenjale on 5/05/20.
  */
-class PersonalProtectiveEquipment(
+class PPE(
     gameScene: GameScene,
     var center: Point, //center of the bitmap
     var radius: Int,
@@ -22,7 +22,6 @@ class PersonalProtectiveEquipment(
     var spawner: PPESpawner? = null
 
     init {
-        //TODO: set bitmap based on level. maybe set obstacle for level so and so on
         if (bitmap == null) bitmap =
             BitmapFactory.decodeResource(context.resources, R.drawable.mask)
         bitmap?.let {

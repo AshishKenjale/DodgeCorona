@@ -35,7 +35,6 @@ class VirusObstacle(
     }
 
     init {
-        //TODO in V2: set bitmap based on level. maybe set obstacle for level so and so on
         if (bitmap == null) bitmap =
             BitmapFactory.decodeResource(context.resources, R.drawable.obstacle)
         bitmap?.let {
