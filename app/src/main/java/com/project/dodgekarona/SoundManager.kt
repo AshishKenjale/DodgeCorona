@@ -1,4 +1,4 @@
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import android.content.Context
 import android.media.AudioAttributes
@@ -6,6 +6,9 @@ import android.media.MediaPlayer
 import android.media.SoundPool
 import java.util.*
 
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 object SoundManager {
     val GAME_MUSIC: Int = R.raw.backgroundloop
     const val PLAYER_DEATH = R.raw.playerinfected

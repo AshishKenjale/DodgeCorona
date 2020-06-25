@@ -1,4 +1,4 @@
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import android.content.Context
 import android.graphics.Canvas
@@ -7,6 +7,9 @@ import android.graphics.Paint
 import android.view.SurfaceHolder
 import java.util.*
 
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 class GameScene {
     // Properties
     val tickRate = 25

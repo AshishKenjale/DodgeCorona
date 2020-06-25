@@ -1,4 +1,4 @@
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import org.junit.Test
 

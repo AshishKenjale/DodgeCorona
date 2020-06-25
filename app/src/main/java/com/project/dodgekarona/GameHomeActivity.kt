@@ -1,4 +1,4 @@
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_game_home.*
 import java.util.*
 
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 class GameHomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +33,7 @@ class GameHomeActivity : AppCompatActivity() {
 
         aboutButton.setOnClickListener(View.OnClickListener {
             AlertDialog.Builder(this)
-                .setTitle(getString(R.string.about_corona_wars_title))
+                .setTitle(getString(R.string.about_dodgekarona_title))
                 .setMessage(getLocaleBasedAboutUsMessage())
                 .setNegativeButton(
                     "OK"

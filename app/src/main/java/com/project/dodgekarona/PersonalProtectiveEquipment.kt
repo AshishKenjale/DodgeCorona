@@ -1,9 +1,12 @@
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import android.content.Context
 import android.graphics.*
 import kotlin.random.Random
 
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 class PersonalProtectiveEquipment(
     gameScene: GameScene,
     var center: Point, //center of the bitmap

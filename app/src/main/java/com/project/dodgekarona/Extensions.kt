@@ -1,7 +1,10 @@
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import java.util.*
 
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 val Any.TAG: String
     get() {
         val tag = javaClass.simpleName

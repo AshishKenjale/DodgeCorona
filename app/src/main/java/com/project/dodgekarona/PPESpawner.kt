@@ -1,10 +1,13 @@
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Point
 import kotlin.random.Random
 
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 class PPESpawner(gameScene: GameScene, context: Context) {
     private val gameScene: GameScene
     private val context: Context

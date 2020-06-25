@@ -1,8 +1,11 @@
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import android.content.Context
 import android.graphics.Canvas
 
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 class VirusObstaclePair(yStart: Int, gameScene: GameScene, context: Context) {
     var yStart: Int
     var virus1: VirusObstacle

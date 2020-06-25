@@ -5,7 +5,7 @@
     <string name="controls">CONTROLS</string>
     <string name="controls_title">Game Controls</string>
     <string name="controls_text">The game uses your phone\'s accelerometer to control the player movement. You have to tilt your phone to move the player in that direction. For example, to move left, slightly tilt your phone left. To move forward, tilt your phone forward. And so on.</string>
-    <string name="about_corona_wars_title">About Dodge Karo Na</string>
+    <string name="about_dodgekarona_title">About Dodge Karo Na</string>
     <string name="about_game_text">The world is infested with the deadly pathogens. You can get infected even if a person around you is infected. The Hakuna Matata Organization (HMO) has recommended keeping a minimum social distance of %1$s in public places. And use of face coverings is mandatory in all public places. Your objective is to help Hagger dodge infected people to make his way home safely.</string>
     <string name="get_ready">Get Ready</string>
     <string name="tap_screen_to_start">Tap Screen to Start</string>
