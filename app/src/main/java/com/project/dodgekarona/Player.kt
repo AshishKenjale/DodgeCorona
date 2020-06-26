@@ -1,13 +1,16 @@
 /*
  * simulates character in the game
  */
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import android.content.Context
 import android.graphics.*
 import androidx.core.content.ContextCompat
 import kotlin.math.sqrt
 
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 class Player(
     context: Context,
     private val gameSurface: GameSurface,

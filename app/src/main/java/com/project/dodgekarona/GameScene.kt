@@ -1,4 +1,4 @@
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import android.content.Context
 import android.graphics.Canvas
@@ -7,6 +7,9 @@ import android.graphics.Paint
 import android.view.SurfaceHolder
 import java.util.*
 
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 class GameScene {
     // Properties
     val tickRate = 25
@@ -189,9 +192,9 @@ class GameScene {
             canvasBorderPaint
         )
 
-        ppeSpawner?.drawAll(screenCanvas)
         virusSpawner?.draw(screenCanvas)
         player?.draw(screenCanvas)
+        ppeSpawner?.drawAll(screenCanvas)
 
         Log.i(TAG, "gameState: ${gameState.toString()}")
         if (gameState === GameState.READY) {
@@ -274,9 +277,9 @@ class GameScene {
         val message: String
         Log.i(TAG, "isMetric: ${Locale.getDefault().isMetric()}")
         if (Locale.getDefault().isMetric()) {
-            message = context.getString(R.string.too_close_to_infected_person_metric)
+            message = String.format(context.getString(R.string.too_close_to_infected_person), context.getString(R.string.safe_social_distance_in_meter))
         } else {
-            message = context.getString(R.string.too_close_to_infected_person_imperial)
+            message = String.format(context.getString(R.string.too_close_to_infected_person), context.getString(R.string.safe_social_distance_in_feet))
         }
         return message
     }

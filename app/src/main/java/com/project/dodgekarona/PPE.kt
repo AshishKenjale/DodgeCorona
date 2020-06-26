@@ -1,10 +1,13 @@
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import android.content.Context
 import android.graphics.*
 import kotlin.random.Random
 
-class PersonalProtectiveEquipment(
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
+class PPE(
     gameScene: GameScene,
     var center: Point, //center of the bitmap
     var radius: Int,
@@ -19,7 +22,6 @@ class PersonalProtectiveEquipment(
     var spawner: PPESpawner? = null
 
     init {
-        //TODO: set bitmap based on level. maybe set obstacle for level so and so on
         if (bitmap == null) bitmap =
             BitmapFactory.decodeResource(context.resources, R.drawable.mask)
         bitmap?.let {

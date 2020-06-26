@@ -1,7 +1,10 @@
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import android.util.Log
 
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 object Log {
     val LOG = BuildConfig.DEBUG
 

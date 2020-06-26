@@ -3,6 +3,9 @@ package com.assignment.userinformationapp
 import android.content.Context
 import android.content.SharedPreferences
 
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 object PrefsHelper {
 
     private lateinit var prefs: SharedPreferences

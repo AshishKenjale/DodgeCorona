@@ -2,10 +2,13 @@
  * objects of the game is extended from this abstract class
  * Bitmap 3 columns, 4 rows
  */
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import android.graphics.Bitmap
 
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 abstract class GameObject(
     protected var image: Bitmap?,
     protected val rowCount: Int,

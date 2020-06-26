@@ -1,9 +1,12 @@
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import android.content.Context
 import android.graphics.*
 import kotlin.random.Random
 
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 class VirusObstacle(
     gameScene: GameScene,
     isTop: Boolean,
@@ -32,7 +35,6 @@ class VirusObstacle(
     }
 
     init {
-        //TODO in V2: set bitmap based on level. maybe set obstacle for level so and so on
         if (bitmap == null) bitmap =
             BitmapFactory.decodeResource(context.resources, R.drawable.obstacle)
         bitmap?.let {

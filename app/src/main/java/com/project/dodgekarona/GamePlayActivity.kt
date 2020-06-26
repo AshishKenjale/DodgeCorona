@@ -1,4 +1,4 @@
-package com.project.dodgecorona
+package com.project.dodgekarona
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -16,7 +16,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.assignment.userinformationapp.PrefsHelper
 import kotlin.math.absoluteValue
 
-
+/**
+ * Created by Ashish Kenjale on 5/05/20.
+ */
 class GamePlayActivity : AppCompatActivity(), SensorEventListener, View.OnTouchListener {
 
     private var mSensorManager: SensorManager? = null
