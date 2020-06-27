@@ -13,7 +13,7 @@ The difficulty of the game increases with time as the obstacle speed increases w
 </a>
 <br/>
 
-## Gameplay
+## Demo
 
 ![](/Screenshots/4.gif)
 <br/><br/>
