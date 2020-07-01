@@ -9,7 +9,7 @@ The player can pick a Power Up which is a medical mask for protection against in
 
 The difficulty of the game increases with time as the obstacle speed increases with time.
 
-<a href='https://play.google.com/store/apps/details?id=com.project.dodgecorona'><img alt='Play Store' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' height=75 width="200" />
+<a href='https://play.google.com/store/apps/details?id=com.project.dodgekarona'><img alt='Play Store' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' height=75 width="200" />
 </a>
 <br/>
 
