@@ -28,6 +28,16 @@ That said, if you liked this project and found it helpful, kindly fork/star this
 
 I'm happy to accept pull requests that make DodgeCorona better. If you're thinking of contributing and want a little feedback before you jump into the codebase, post an [issue](https://github.com/Ashish-Kenjale/DodgeCorona/issues) or comment on an existing issue on Github.
 
+## Dockerized build
+
+To enable easy builds I have created and uploaded an image of my build environment on ![DockerHub](https://hub.docker.com/repository/docker/ashishkenjale/ashishz2020/tags?page=1). You can run a container with my image with the commands below:
+
+```docker pull ashishkenjale/ashishz2020:android-build```
+
+Now $cd to the app directory and run:
+
+```docker run --rm -v "$PWD":/home/gradle/ -w /home/gradle/ ashishkenjale/ashishz2020:android-build gradle -PdisablePreDex assembleDebug```
+
 ## License
 
 This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
