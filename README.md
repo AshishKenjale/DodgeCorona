@@ -30,7 +30,7 @@ I'm happy to accept pull requests that make DodgeCorona better. If you're thinki
 
 ## Dockerized build
 
-To enable easy builds I have created and uploaded an image of my build environment on ![DockerHub](https://hub.docker.com/repository/docker/ashishkenjale/ashishz2020/tags?page=1). You can run a container with my image with the commands below:
+To enable easy builds I have created and uploaded an image of my build environment on [DockerHub](https://hub.docker.com/repository/docker/ashishkenjale/ashishz2020/tags?page=1). You can run a container with my image with the commands below:
 
 ```docker pull ashishkenjale/ashishz2020:android-build```
 
