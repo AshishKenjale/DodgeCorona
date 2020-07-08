@@ -268,6 +268,13 @@ class GameScene {
             xPos = canvasWidth / 2 - (paint.measureText(victoryMessage) / 2)
             yPos = (canvasHeight / 2 + 370 - (paint.descent() + paint.ascent()) / 2)
             screenCanvas.drawText(victoryMessage, xPos, yPos, paint)
+
+            paint.setColor(Color.BLACK)
+            paint.setTextSize(40f)
+            victoryMessage = "Share Score"
+            xPos = canvasWidth / 2 - (paint.measureText(victoryMessage) / 2)
+            yPos = (canvasHeight / 2 + 440 - (paint.descent() + paint.ascent()) / 2)
+            screenCanvas.drawText(victoryMessage, xPos, yPos, paint)
         }
 
         paint.reset()
