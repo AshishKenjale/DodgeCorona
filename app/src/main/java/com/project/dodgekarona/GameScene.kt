@@ -1,10 +1,12 @@
 package com.project.dodgekarona
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.view.SurfaceHolder
+import android.widget.TextView
 import java.util.*
 
 /**
@@ -290,6 +292,16 @@ class GameScene {
         }
         return message
     }
+
+    private fun shareScreenshot(): Intent{
+        val share: String = "Share Score"
+        val sharescreenshot = Intent(context,GamePlayActivity::class.java)
+
+     return shareScreenshot()
+    }
+
+
+
 
     private fun control(start: Long) {
         try {
