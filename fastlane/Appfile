@@ -1,2 +1,2 @@
-json_key_file("/Users/ashishkenjale/Documents/GitHub/GoogleServicesJson/pc-api-5385358058934230874-102-c7d259c3765a.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+json_key_file("/Users/ashishkenjale/Documents/GitHub/Secrets/GoogleServicesJson/pc-api-5385358058934230874-102-c7d259c3765a.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
 package_name("com.project.dodgekarona") # e.g. com.krausefx.app
