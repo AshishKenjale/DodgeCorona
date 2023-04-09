@@ -20,6 +20,5 @@
     <string name="safe_social_distance_in_feet">6 ft</string>
     <string name="stay_home">Stay home for 14 days.</string>
     <string name="tap_screen_to_restart">Tap Screen to Restart</string>
-    <string name="copyright_string">© 2020 Ashish Kenjale</string>
-    <string name="version_string">v1.2</string>
+    <string name="copyright_string">© 2023 Ashish Kenjale</string>
 </resources>

@@ -95,7 +95,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="@dimen/padding_medium"
             android:gravity="center"
-            android:text="@string/version_string"
+            android:text="@string/app_version"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/copyrightText"
             app:layout_constraintStart_toStartOf="@+id/copyrightText"
