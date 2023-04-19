@@ -1,7 +1,7 @@
 package com.project.dodgekarona
 
 import android.annotation.SuppressLint
-import android.content.Context
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Point
 import android.hardware.Sensor
@@ -15,10 +15,12 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.assignment.userinformationapp.PrefsHelper
 import kotlin.math.absoluteValue
+import android.content.Context as context
 
 /**
  * Created by Ashish Kenjale on 5/05/20.
  */
+@Suppress("NAME_SHADOWING")
 class GamePlayActivity : AppCompatActivity(), SensorEventListener, View.OnTouchListener {
 
     private var mSensorManager: SensorManager? = null
@@ -93,7 +95,7 @@ class GamePlayActivity : AppCompatActivity(), SensorEventListener, View.OnTouchL
     }
 
     private fun setUpGravitySensor() {
-        mSensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        mSensorManager = getSystemService(context.SENSOR_SERVICE) as SensorManager
         mGravitySensor = mSensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
     }
 
@@ -194,3 +196,5 @@ class GamePlayActivity : AppCompatActivity(), SensorEventListener, View.OnTouchL
         return mGameSurface.handleTouchEvent(event)
     }
 }
+
+

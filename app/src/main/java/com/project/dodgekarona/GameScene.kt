@@ -1,10 +1,12 @@
 package com.project.dodgekarona
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.view.SurfaceHolder
+import android.widget.TextView
 import java.util.*
 
 /**
@@ -268,6 +270,13 @@ class GameScene {
             xPos = canvasWidth / 2 - (paint.measureText(victoryMessage) / 2)
             yPos = (canvasHeight / 2 + 370 - (paint.descent() + paint.ascent()) / 2)
             screenCanvas.drawText(victoryMessage, xPos, yPos, paint)
+
+            paint.setColor(Color.BLACK)
+            paint.setTextSize(40f)
+            victoryMessage = "Share Score"
+            xPos = canvasWidth / 2 - (paint.measureText(victoryMessage) / 2)
+            yPos = (canvasHeight / 2 + 440 - (paint.descent() + paint.ascent()) / 2)
+            screenCanvas.drawText(victoryMessage, xPos, yPos, paint)
         }
 
         paint.reset()
@@ -283,6 +292,16 @@ class GameScene {
         }
         return message
     }
+
+    private fun shareScreenshot(): Intent{
+        val share: String = "Share Score"
+        val sharescreenshot = Intent(context,GamePlayActivity::class.java)
+
+     return shareScreenshot()
+    }
+
+
+
 
     private fun control(start: Long) {
         try {

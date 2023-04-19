@@ -1,11 +1,15 @@
 package com.project.dodgekarona
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.view.MotionEvent
 import android.view.SurfaceHolder
 import android.view.SurfaceView
+import android.view.View
+import androidx.core.content.ContextCompat.startActivity
+import org.w3c.dom.Text
 
 /**
  * Created by Ashish Kenjale on 5/05/20.
@@ -106,6 +110,8 @@ class GameSurface(context: Context?, screenWidth: Int, screenHeight: Int) :
         Log.i(TAG, "in startGame()")
         gameScene?.startGame()
     }
+
+    
 
     fun handleTouchEvent(e: MotionEvent?): Boolean {
         Log.i(TAG, "in handleTouchEvent()")

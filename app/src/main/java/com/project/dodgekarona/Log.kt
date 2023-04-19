@@ -27,4 +27,5 @@ object Log {
     fun w(tag: String, string: String) {
         if (LOG) Log.w(tag, string)
     }
+
 }
