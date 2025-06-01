@@ -5,24 +5,27 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_game_home.*
+import com.project.dodgekarona.databinding.ActivityGameHomeBinding
 import java.util.*
 
 /**
  * Created by Ashish Kenjale on 5/05/20.
  */
 class GameHomeActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityGameHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_game_home)
+        binding = ActivityGameHomeBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        startGameButton.setOnClickListener {
+        binding.startGameButton.setOnClickListener {
             val navigationIntent = Intent(this, GamePlayActivity::class.java)
             startActivity(navigationIntent)
         }
 
-        controlsButton.setOnClickListener(View.OnClickListener {
+        binding.controlsButton.setOnClickListener(View.OnClickListener {
             AlertDialog.Builder(this)
                 .setTitle(getString(R.string.controls_title))
                 .setMessage(getString(R.string.controls_text))
@@ -31,7 +34,7 @@ class GameHomeActivity : AppCompatActivity() {
                 ) { dialog, which -> }.show()
         })
 
-        aboutButton.setOnClickListener(View.OnClickListener {
+        binding.aboutButton.setOnClickListener(View.OnClickListener {
             AlertDialog.Builder(this)
                 .setTitle(getString(R.string.about_dodgekarona_title))
                 .setMessage(getLocaleBasedAboutUsMessage())

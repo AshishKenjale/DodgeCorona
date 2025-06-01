@@ -11,8 +11,8 @@ import java.util.*
  */
 object SoundManager {
     val GAME_MUSIC: Int = R.raw.backgroundloop
-    const val PLAYER_DEATH = R.raw.playerinfected
-    const val PLAYER_POWER_UP = R.raw.playerinvincible
+    val PLAYER_DEATH = R.raw.playerinfected
+    val PLAYER_POWER_UP = R.raw.playerinvincible
     private val sounds: MutableMap<Int, Int> = HashMap()
     private val songs: MutableMap<Int, MediaPlayer?> = HashMap()
     private val vols: MutableMap<MediaPlayer?, Float> = HashMap()

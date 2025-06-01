@@ -12,8 +12,8 @@ val Any.TAG: String
     }
 
 fun Locale.isMetric(): Boolean {
-    Log.i(TAG, "isMetric: ${country.toUpperCase(Locale.getDefault())}")
-    return when (country.toUpperCase(Locale.getDefault())) {
+    Log.i(TAG, "isMetric: ${country.uppercase(Locale.getDefault())}")
+    return when (country.uppercase(Locale.getDefault())) {
         //US, Liberia, Myanmar, UK
         "US", "LR", "MM", "GB" -> false
         else -> true
