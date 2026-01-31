@@ -31,6 +31,9 @@
     <string name="position_left">Left</string>
     <string name="position_right">Right</string>
     <string name="joystick_preview">Preview</string>
+    <string name="invert_axis">Invert Axis</string>
+    <string name="invert_x_axis">Invert X (Left/Right)</string>
+    <string name="invert_y_axis">Invert Y (Up/Down)</string>
     <string name="save_settings">SAVE</string>
     <string name="reset_defaults">RESET TO DEFAULTS</string>
     <string name="settings_saved">Settings saved</string>

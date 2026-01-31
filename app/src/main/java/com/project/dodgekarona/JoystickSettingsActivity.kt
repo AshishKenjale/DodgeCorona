@@ -17,6 +17,8 @@ class JoystickSettingsActivity : AppCompatActivity() {
     private var currentSize: Float = PrefsHelper.DEFAULT_JOYSTICK_SIZE
     private var currentOpacity: Float = PrefsHelper.DEFAULT_JOYSTICK_OPACITY
     private var currentPosition: Int = PrefsHelper.DEFAULT_JOYSTICK_POSITION
+    private var currentInvertX: Boolean = PrefsHelper.DEFAULT_JOYSTICK_INVERT_X
+    private var currentInvertY: Boolean = PrefsHelper.DEFAULT_JOYSTICK_INVERT_Y
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,8 @@ class JoystickSettingsActivity : AppCompatActivity() {
         currentSize = PrefsHelper.read(PrefsHelper.JOYSTICK_SIZE, PrefsHelper.DEFAULT_JOYSTICK_SIZE)
         currentOpacity = PrefsHelper.read(PrefsHelper.JOYSTICK_OPACITY, PrefsHelper.DEFAULT_JOYSTICK_OPACITY)
         currentPosition = PrefsHelper.read(PrefsHelper.JOYSTICK_POSITION, PrefsHelper.DEFAULT_JOYSTICK_POSITION) ?: PrefsHelper.DEFAULT_JOYSTICK_POSITION
+        currentInvertX = PrefsHelper.read(PrefsHelper.JOYSTICK_INVERT_X, PrefsHelper.DEFAULT_JOYSTICK_INVERT_X)
+        currentInvertY = PrefsHelper.read(PrefsHelper.JOYSTICK_INVERT_Y, PrefsHelper.DEFAULT_JOYSTICK_INVERT_Y)
     }
 
     private fun setupUI() {
@@ -78,6 +82,18 @@ class JoystickSettingsActivity : AppCompatActivity() {
             updatePreview()
         }
 
+        // Invert Axis Checkboxes
+        binding.invertXCheckbox.isChecked = currentInvertX
+        binding.invertYCheckbox.isChecked = currentInvertY
+
+        binding.invertXCheckbox.setOnCheckedChangeListener { _, isChecked ->
+            currentInvertX = isChecked
+        }
+
+        binding.invertYCheckbox.setOnCheckedChangeListener { _, isChecked ->
+            currentInvertY = isChecked
+        }
+
         // Save Button
         binding.saveButton.setOnClickListener {
             saveSettings()
@@ -99,16 +115,22 @@ class JoystickSettingsActivity : AppCompatActivity() {
         PrefsHelper.write(PrefsHelper.JOYSTICK_SIZE, currentSize)
         PrefsHelper.write(PrefsHelper.JOYSTICK_OPACITY, currentOpacity)
         PrefsHelper.write(PrefsHelper.JOYSTICK_POSITION, currentPosition)
+        PrefsHelper.write(PrefsHelper.JOYSTICK_INVERT_X, currentInvertX)
+        PrefsHelper.write(PrefsHelper.JOYSTICK_INVERT_Y, currentInvertY)
     }
 
     private fun resetToDefaults() {
         currentSize = PrefsHelper.DEFAULT_JOYSTICK_SIZE
         currentOpacity = PrefsHelper.DEFAULT_JOYSTICK_OPACITY
         currentPosition = PrefsHelper.DEFAULT_JOYSTICK_POSITION
+        currentInvertX = PrefsHelper.DEFAULT_JOYSTICK_INVERT_X
+        currentInvertY = PrefsHelper.DEFAULT_JOYSTICK_INVERT_Y
 
         binding.sizeSeekBar.progress = (currentSize * 100).toInt()
         binding.opacitySeekBar.progress = (currentOpacity * 100).toInt()
         binding.positionLeft.isChecked = true
+        binding.invertXCheckbox.isChecked = currentInvertX
+        binding.invertYCheckbox.isChecked = currentInvertY
 
         updatePreview()
         Toast.makeText(this, R.string.settings_reset, Toast.LENGTH_SHORT).show()

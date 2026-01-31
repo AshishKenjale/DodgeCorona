@@ -20,6 +20,8 @@ class VirtualJoystick(
     private var sizeMultiplier: Float = PrefsHelper.DEFAULT_JOYSTICK_SIZE
     private var opacity: Float = PrefsHelper.DEFAULT_JOYSTICK_OPACITY
     private var position: Int = PrefsHelper.DEFAULT_JOYSTICK_POSITION
+    private var invertX: Boolean = PrefsHelper.DEFAULT_JOYSTICK_INVERT_X
+    private var invertY: Boolean = PrefsHelper.DEFAULT_JOYSTICK_INVERT_Y
 
     // Joystick positioning - bottom corner of screen
     private var baseRadius: Float = 0f
@@ -74,6 +76,8 @@ class VirtualJoystick(
         sizeMultiplier = PrefsHelper.read(PrefsHelper.JOYSTICK_SIZE, PrefsHelper.DEFAULT_JOYSTICK_SIZE)
         opacity = PrefsHelper.read(PrefsHelper.JOYSTICK_OPACITY, PrefsHelper.DEFAULT_JOYSTICK_OPACITY)
         position = PrefsHelper.read(PrefsHelper.JOYSTICK_POSITION, PrefsHelper.DEFAULT_JOYSTICK_POSITION) ?: PrefsHelper.DEFAULT_JOYSTICK_POSITION
+        invertX = PrefsHelper.read(PrefsHelper.JOYSTICK_INVERT_X, PrefsHelper.DEFAULT_JOYSTICK_INVERT_X)
+        invertY = PrefsHelper.read(PrefsHelper.JOYSTICK_INVERT_Y, PrefsHelper.DEFAULT_JOYSTICK_INVERT_Y)
         updatePaintOpacity()
     }
 
@@ -210,9 +214,13 @@ class VirtualJoystick(
         }
 
         // Calculate normalized movement vectors (-1 to 1)
-        // Invert X for intuitive left/right movement
-        movingVectorX = -(knobCenterX - baseCenterX) / baseRadius
-        movingVectorY = (knobCenterY - baseCenterY) / baseRadius
+        // Default: Invert X for intuitive left/right movement
+        var rawVectorX = -(knobCenterX - baseCenterX) / baseRadius
+        var rawVectorY = (knobCenterY - baseCenterY) / baseRadius
+
+        // Apply user's inversion settings
+        movingVectorX = if (invertX) -rawVectorX else rawVectorX
+        movingVectorY = if (invertY) -rawVectorY else rawVectorY
 
         // Apply dead zone for small movements (prevents drift)
         val deadZone = 0.1f
