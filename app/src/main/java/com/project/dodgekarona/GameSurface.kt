@@ -16,6 +16,9 @@ class GameSurface(context: Context?, screenWidth: Int, screenHeight: Int) :
     var gameScene: GameScene? = null
     var surfaceHolder: SurfaceHolder
 
+    // Virtual joystick for player control
+    val virtualJoystick: VirtualJoystick
+
     // Here is the Thread and two control variables
     private lateinit var gameThread: Thread
     // This volatile variable can be accessed
@@ -36,6 +39,9 @@ class GameSurface(context: Context?, screenWidth: Int, screenHeight: Int) :
 
         GameSurface.screenWidth = screenWidth
         GameSurface.screenHeight = screenHeight
+
+        // Initialize virtual joystick
+        virtualJoystick = VirtualJoystick(screenWidth, screenHeight)
     }
 
     // This function is called by GamePlayActivity
@@ -110,6 +116,18 @@ class GameSurface(context: Context?, screenWidth: Int, screenHeight: Int) :
     fun handleTouchEvent(e: MotionEvent?): Boolean {
         Log.i(TAG, "in handleTouchEvent()")
         e?.let {
+            // During active gameplay, let joystick handle touch first
+            if (gameScene?.gameState === GameState.RUNNING) {
+                if (virtualJoystick.handleTouchEvent(it)) {
+                    // Update player movement from joystick
+                    player?.setMovingVector(
+                        virtualJoystick.getMovingVectorX(),
+                        virtualJoystick.getMovingVectorY()
+                    )
+                    return true
+                }
+            }
+
             val maskedAction = e.actionMasked
             when (maskedAction) {
                 MotionEvent.ACTION_DOWN -> {
