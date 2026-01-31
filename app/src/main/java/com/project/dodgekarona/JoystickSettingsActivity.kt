@@ -25,6 +25,9 @@ class JoystickSettingsActivity : AppCompatActivity() {
         binding = ActivityJoystickSettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Ensure PrefsHelper is initialized
+        PrefsHelper.init(this)
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = getString(R.string.joystick_settings_title)
 
