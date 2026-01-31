@@ -121,7 +121,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/position_left"
-                android:layout_marginEnd="@dimen/padding_large" />
+                android:layout_marginEnd="@dimen/padding_medium" />
+
+            <RadioButton
+                android:id="@+id/positionCenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/position_center"
+                android:layout_marginEnd="@dimen/padding_medium" />
 
             <RadioButton
                 android:id="@+id/positionRight"

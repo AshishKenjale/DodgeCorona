@@ -90,12 +90,13 @@ class VirtualJoystick(
         baseRadius = smallerDimension * 0.12f * sizeMultiplier
         knobRadius = baseRadius * 0.5f
 
-        // Position based on setting (0 = left, 1 = right)
+        // Position based on setting (0 = left, 1 = right, 2 = center)
         val padding = baseRadius * 1.5f
-        baseCenterX = if (position == 0) {
-            padding + baseRadius // Left
-        } else {
-            screenWidth - padding - baseRadius // Right
+        baseCenterX = when (position) {
+            0 -> padding + baseRadius // Left
+            1 -> screenWidth - padding - baseRadius // Right
+            2 -> screenWidth / 2f // Center
+            else -> padding + baseRadius // Default to left
         }
         baseCenterY = screenHeight - padding - baseRadius
 

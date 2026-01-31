@@ -29,6 +29,7 @@
     <string name="joystick_opacity">Opacity</string>
     <string name="joystick_position">Position</string>
     <string name="position_left">Left</string>
+    <string name="position_center">Center</string>
     <string name="position_right">Right</string>
     <string name="joystick_preview">Preview</string>
     <string name="invert_axis">Invert Axis</string>

@@ -62,12 +62,13 @@ class JoystickPreviewView @JvmOverloads constructor(
         val baseRadius = smallerDimension * 0.2f * joystickSize
         val knobRadius = baseRadius * 0.5f
 
-        // Calculate position
+        // Calculate position (0 = left, 1 = right, 2 = center)
         val padding = baseRadius * 1.5f
-        val centerX = if (joystickPosition == 0) {
-            padding + baseRadius // Left
-        } else {
-            viewWidth - padding - baseRadius // Right
+        val centerX = when (joystickPosition) {
+            0 -> padding + baseRadius // Left
+            1 -> viewWidth - padding - baseRadius // Right
+            2 -> viewWidth / 2f // Center
+            else -> padding + baseRadius // Default to left
         }
         val centerY = viewHeight - padding - baseRadius
 

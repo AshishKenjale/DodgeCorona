@@ -73,15 +73,20 @@ class JoystickSettingsActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        // Position RadioGroup
-        if (currentPosition == 0) {
-            binding.positionLeft.isChecked = true
-        } else {
-            binding.positionRight.isChecked = true
+        // Position RadioGroup (0 = left, 1 = right, 2 = center)
+        when (currentPosition) {
+            0 -> binding.positionLeft.isChecked = true
+            1 -> binding.positionRight.isChecked = true
+            2 -> binding.positionCenter.isChecked = true
         }
 
         binding.positionRadioGroup.setOnCheckedChangeListener { _, checkedId ->
-            currentPosition = if (checkedId == R.id.positionLeft) 0 else 1
+            currentPosition = when (checkedId) {
+                R.id.positionLeft -> 0
+                R.id.positionRight -> 1
+                R.id.positionCenter -> 2
+                else -> 0
+            }
             updatePreview()
         }
 
