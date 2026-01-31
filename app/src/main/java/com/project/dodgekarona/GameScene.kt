@@ -196,6 +196,11 @@ class GameScene {
         player?.draw(screenCanvas)
         ppeSpawner?.drawAll(screenCanvas)
 
+        // Draw virtual joystick during active gameplay
+        if (gameState === GameState.RUNNING) {
+            gameSurface.virtualJoystick.draw(screenCanvas)
+        }
+
         Log.i(TAG, "gameState: ${gameState.toString()}")
         if (gameState === GameState.READY) {
             paint.setColor(Color.RED)

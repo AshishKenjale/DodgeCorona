@@ -34,6 +34,11 @@ class GameHomeActivity : AppCompatActivity() {
                 ) { dialog, which -> }.show()
         })
 
+        binding.joystickControlButton.setOnClickListener {
+            val navigationIntent = Intent(this, JoystickSettingsActivity::class.java)
+            startActivity(navigationIntent)
+        }
+
         binding.aboutButton.setOnClickListener(View.OnClickListener {
             AlertDialog.Builder(this)
                 .setTitle(getString(R.string.about_dodgekarona_title))
