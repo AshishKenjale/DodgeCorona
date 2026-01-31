@@ -268,4 +268,19 @@ class VirtualJoystick(
      * Check if joystick is currently being touched.
      */
     fun isActive(): Boolean = isPressed
+
+    /**
+     * Get the X coordinate of the joystick center.
+     */
+    fun getCenterX(): Float = baseCenterX
+
+    /**
+     * Get the Y coordinate of the joystick center.
+     */
+    fun getCenterY(): Float = baseCenterY
+
+    /**
+     * Get the radius of the joystick base.
+     */
+    fun getBaseRadius(): Float = baseRadius
 }

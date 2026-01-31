@@ -84,14 +84,21 @@ class GameSurface(context: Context?, screenWidth: Int, screenHeight: Int) :
         maskBitmap?.let {
             maskBitmap = Bitmap.createScaledBitmap(it, 1 * it.height / 4, 1 * it.height / 4, true)
         }
+
+        // Position player above the joystick
+        val joystickCenterX = virtualJoystick.getCenterX()
+        val joystickTopY = virtualJoystick.getCenterY() - virtualJoystick.getBaseRadius()
+        val playerStartX = (joystickCenterX - 32).toInt()
+        val playerStartY = (joystickTopY - 150).toInt() // 150 pixels above joystick
+
         this.player =
             Player(
                 context,
                 this,
                 chibiBitmap1,
                 maskBitmap,
-                screenWidth / 2 - 32,
-                screenHeight - 300
+                playerStartX,
+                playerStartY
             )
     }
 
