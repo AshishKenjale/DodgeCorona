@@ -60,6 +60,18 @@
             app:layout_constraintTop_toBottomOf="@+id/startGameButton" />
 
         <Button
+            android:id="@+id/joystickControlButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_medium"
+            android:layout_marginTop="@dimen/padding_medium"
+            android:layout_marginEnd="@dimen/padding_medium"
+            android:text="@string/joystick_control"
+            app:layout_constraintEnd_toEndOf="@+id/startGameButton"
+            app:layout_constraintStart_toStartOf="@+id/startGameButton"
+            app:layout_constraintTop_toBottomOf="@+id/controlsButton" />
+
+        <Button
             android:id="@+id/aboutButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,7 +82,7 @@
             app:layout_constraintEnd_toEndOf="@+id/startGameButton"
             app:layout_constraintHorizontal_bias="0.466"
             app:layout_constraintStart_toStartOf="@+id/startGameButton"
-            app:layout_constraintTop_toBottomOf="@+id/controlsButton" />
+            app:layout_constraintTop_toBottomOf="@+id/joystickControlButton" />
 
         <TextView
             android:id="@+id/copyrightText"

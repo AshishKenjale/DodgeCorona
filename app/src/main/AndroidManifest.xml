@@ -17,6 +17,8 @@
         </activity>
         <activity android:name="com.project.dodgekarona.GamePlayActivity">
         </activity>
+        <activity android:name="com.project.dodgekarona.JoystickSettingsActivity">
+        </activity>
     </application>
 
 </manifest>

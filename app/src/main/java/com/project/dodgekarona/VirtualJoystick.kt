@@ -4,6 +4,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.view.MotionEvent
+import com.assignment.userinformationapp.PrefsHelper
 import kotlin.math.min
 import kotlin.math.sqrt
 
@@ -15,15 +16,20 @@ class VirtualJoystick(
     private val screenWidth: Int,
     private val screenHeight: Int
 ) {
-    // Joystick positioning - bottom center of screen
-    private val baseRadius: Float
-    private val knobRadius: Float
-    private val baseCenterX: Float
-    private val baseCenterY: Float
+    // Joystick settings (loaded from preferences)
+    private var sizeMultiplier: Float = PrefsHelper.DEFAULT_JOYSTICK_SIZE
+    private var opacity: Float = PrefsHelper.DEFAULT_JOYSTICK_OPACITY
+    private var position: Int = PrefsHelper.DEFAULT_JOYSTICK_POSITION
+
+    // Joystick positioning - bottom corner of screen
+    private var baseRadius: Float = 0f
+    private var knobRadius: Float = 0f
+    private var baseCenterX: Float = 0f
+    private var baseCenterY: Float = 0f
 
     // Current knob position
-    private var knobCenterX: Float
-    private var knobCenterY: Float
+    private var knobCenterX: Float = 0f
+    private var knobCenterY: Float = 0f
 
     // Movement vectors (normalized -1 to 1)
     private var movingVectorX: Float = 0f
@@ -35,45 +41,86 @@ class VirtualJoystick(
 
     // Paint objects for drawing
     private val basePaint = Paint().apply {
-        color = Color.argb(80, 128, 128, 128)
         style = Paint.Style.FILL
         isAntiAlias = true
     }
 
     private val baseOutlinePaint = Paint().apply {
-        color = Color.argb(120, 100, 100, 100)
         style = Paint.Style.STROKE
         strokeWidth = 4f
         isAntiAlias = true
     }
 
     private val knobPaint = Paint().apply {
-        color = Color.argb(180, 60, 60, 60)
         style = Paint.Style.FILL
         isAntiAlias = true
     }
 
     private val knobOutlinePaint = Paint().apply {
-        color = Color.argb(200, 40, 40, 40)
         style = Paint.Style.STROKE
         strokeWidth = 3f
         isAntiAlias = true
     }
 
     init {
+        loadSettings()
+        calculateDimensions()
+    }
+
+    /**
+     * Load joystick settings from preferences.
+     */
+    private fun loadSettings() {
+        sizeMultiplier = PrefsHelper.read(PrefsHelper.JOYSTICK_SIZE, PrefsHelper.DEFAULT_JOYSTICK_SIZE)
+        opacity = PrefsHelper.read(PrefsHelper.JOYSTICK_OPACITY, PrefsHelper.DEFAULT_JOYSTICK_OPACITY)
+        position = PrefsHelper.read(PrefsHelper.JOYSTICK_POSITION, PrefsHelper.DEFAULT_JOYSTICK_POSITION) ?: PrefsHelper.DEFAULT_JOYSTICK_POSITION
+        updatePaintOpacity()
+    }
+
+    /**
+     * Recalculate joystick dimensions and position based on settings.
+     */
+    private fun calculateDimensions() {
         // Size joystick relative to screen (responsive design)
         val smallerDimension = min(screenWidth, screenHeight)
-        baseRadius = smallerDimension * 0.12f
+        baseRadius = smallerDimension * 0.12f * sizeMultiplier
         knobRadius = baseRadius * 0.5f
 
-        // Position at bottom-left with padding
+        // Position based on setting (0 = left, 1 = right)
         val padding = baseRadius * 1.5f
-        baseCenterX = padding + baseRadius
+        baseCenterX = if (position == 0) {
+            padding + baseRadius // Left
+        } else {
+            screenWidth - padding - baseRadius // Right
+        }
         baseCenterY = screenHeight - padding - baseRadius
 
         // Initialize knob at center
         knobCenterX = baseCenterX
         knobCenterY = baseCenterY
+    }
+
+    /**
+     * Update paint alpha values based on opacity setting.
+     */
+    private fun updatePaintOpacity() {
+        val baseAlpha = (80 * opacity * 2).toInt().coerceIn(0, 255)
+        val baseOutlineAlpha = (120 * opacity * 2).toInt().coerceIn(0, 255)
+        val knobAlpha = (180 * opacity * 2).toInt().coerceIn(0, 255)
+        val knobOutlineAlpha = (200 * opacity * 2).toInt().coerceIn(0, 255)
+
+        basePaint.color = Color.argb(baseAlpha, 128, 128, 128)
+        baseOutlinePaint.color = Color.argb(baseOutlineAlpha, 100, 100, 100)
+        knobPaint.color = Color.argb(knobAlpha, 60, 60, 60)
+        knobOutlinePaint.color = Color.argb(knobOutlineAlpha, 40, 40, 40)
+    }
+
+    /**
+     * Reload settings from preferences. Call this when returning to game.
+     */
+    fun reloadSettings() {
+        loadSettings()
+        calculateDimensions()
     }
 
     /**

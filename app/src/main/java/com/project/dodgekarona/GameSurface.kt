@@ -67,6 +67,9 @@ class GameSurface(context: Context?, screenWidth: Int, screenHeight: Int) :
 
         Log.i(TAG, "starting new game loop resume() running $running")
 
+        // Reload joystick settings in case they were changed
+        virtualJoystick.reloadSettings()
+
         // Initialize the instance of Thread
         gameThread = Thread(this)
 
