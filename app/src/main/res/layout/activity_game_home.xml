@@ -12,6 +12,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -40,6 +41,8 @@
             android:layout_marginStart="@dimen/padding_medium"
             android:layout_marginTop="@dimen/padding_large"
             android:layout_marginEnd="@dimen/padding_medium"
+            android:background="@drawable/rounded_button"
+            android:textColor="@android:color/white"
             android:text="@string/start_new_game"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -53,6 +56,8 @@
             android:layout_marginStart="@dimen/padding_medium"
             android:layout_marginTop="@dimen/padding_medium"
             android:layout_marginEnd="@dimen/padding_medium"
+            android:background="@drawable/rounded_button"
+            android:textColor="@android:color/white"
             android:text="@string/controls"
             app:layout_constraintEnd_toEndOf="@+id/startGameButton"
             app:layout_constraintHorizontal_bias="0.266"
@@ -66,6 +71,8 @@
             android:layout_marginStart="@dimen/padding_medium"
             android:layout_marginTop="@dimen/padding_medium"
             android:layout_marginEnd="@dimen/padding_medium"
+            android:background="@drawable/rounded_button"
+            android:textColor="@android:color/white"
             android:text="@string/joystick_control"
             app:layout_constraintEnd_toEndOf="@+id/startGameButton"
             app:layout_constraintStart_toStartOf="@+id/startGameButton"
@@ -78,6 +85,8 @@
             android:layout_marginStart="@dimen/padding_medium"
             android:layout_marginTop="@dimen/padding_medium"
             android:layout_marginEnd="@dimen/padding_medium"
+            android:background="@drawable/rounded_button"
+            android:textColor="@android:color/white"
             android:text="@string/about"
             app:layout_constraintEnd_toEndOf="@+id/startGameButton"
             app:layout_constraintHorizontal_bias="0.466"
